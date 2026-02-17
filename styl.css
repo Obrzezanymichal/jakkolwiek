@@ -1,0 +1,49 @@
+* {
+    text-align: center;
+    font-family: Georgia;
+}
+
+header
+footer {
+    background-color: tomato;
+    color: mistyrose;
+    padding: 10px;
+}
+
+nav {
+    width: 20px;
+}
+
+nav>article {
+    background-color: #ffaea5;
+    height: 170px;
+    font-size: 200%;
+}
+
+#blok1 {
+    background-color: mistyrose;
+}
+
+main {
+    background-color: mistyrose;
+    width: 80%;
+    height: 510px;
+    overflow: auto;
+}
+
+#sekcja2,
+#sekcja3 {
+    display: none;
+}
+select,
+button {
+    margin: 20px;
+
+}
+dt {
+    font-weight: bold;
+    font-style: italic;
+}
+dt:hover {
+    clear: both;
+}
