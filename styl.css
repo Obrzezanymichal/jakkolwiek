@@ -1,45 +1,60 @@
-const blockOne = document.getElementById("one");
-const blockTwo = document.getElementById("two");
-const blockThree = document.getElementById("three");
+* {
+    text-align: center;
+    font-family: Georgia;
+}
 
+header,
+footer {
+    background-color: Tomato;
+    color: MistyRose;
+    padding: 10px;
+}
 
-const sectionOne = document.getElementById("pierwsza");
-const sectionTwo = document.getElementById("opisy");
-const sectionThree = document.getElementById("galeria");
+nav {
+    width: 20%;
+    float: left;
+}
 
-function changeOfSectionOne() {
+#one,
+#two,
+#three {
+    background-color: #FFAEA5;
+    height: 170px;
+    font-size: 200%;
+}
 
-    blockOne.style.backgroundColor = "MistyRose";
+#one {
+    background-color: MistyRose;
+}
 
-    blockTwo.style.backgroundColor = "#FFAEA5";
-    blockThree.style.backgroundColor = "#FFAEA5";
+main {
+    background-color: MistyRose;
+    width: 80%;
+    height: 510px;
+    overflow: auto;
+}
 
-    sectionOne.style.display = "block";
-    sectionTwo.style.display = "none";
-    sectionThree.style.display = "none";
-};
+#opisy,
+#galeria {
+    display: none;
+}
 
-function changeOfSectionTwo() {
+table {
+    margin: auto;
+    width: 60%;
+    border: 1px dashed Indigo;
+}
 
-    blockTwo.style.backgroundColor = "MistyRose";
+select,
+button {
+    margin: 20px;
+}
 
-    blockOne.style.backgroundColor = "#FFAEA5";
-    blockThree.style.backgroundColor = "#FFAEA5";
+dt {
+    font-weight: bold;
+    font-style: italic;
+}
 
-    sectionTwo.style.display = "block";
-    sectionOne.style.display = "none";
-    sectionThree.style.display = "none";
-};
-
-function changeOfSectionThree() {
-
-    blockThree.style.backgroundColor = "MistyRose";
-
-    blockTwo.style.backgroundColor = "#FFAEA5";
-    blockOne.style.backgroundColor = "#FFAEA5";
-
-    sectionThree.style.display = "block";
-    sectionOne.style.display = "none";
-    sectionTwo.style.display = "none";
-
-};
+dt:hover {
+    font-size: 180%;
+}
