@@ -1,49 +1,45 @@
-* {
-    text-align: center;
-    font-family: Georgia;
-}
+const blockOne = document.getElementById("one");
+const blockTwo = document.getElementById("two");
+const blockThree = document.getElementById("three");
 
-header
-footer {
-    background-color: tomato;
-    color: mistyrose;
-    padding: 10px;
-}
 
-nav {
-    width: 20px;
-}
+const sectionOne = document.getElementById("pierwsza");
+const sectionTwo = document.getElementById("opisy");
+const sectionThree = document.getElementById("galeria");
 
-nav>article {
-    background-color: #ffaea5;
-    height: 170px;
-    font-size: 200%;
-}
+function changeOfSectionOne() {
 
-#blok1 {
-    background-color: mistyrose;
-}
+    blockOne.style.backgroundColor = "MistyRose";
 
-main {
-    background-color: mistyrose;
-    width: 80%;
-    height: 510px;
-    overflow: auto;
-}
+    blockTwo.style.backgroundColor = "#FFAEA5";
+    blockThree.style.backgroundColor = "#FFAEA5";
 
-#sekcja2,
-#sekcja3 {
-    display: none;
-}
-select,
-button {
-    margin: 20px;
+    sectionOne.style.display = "block";
+    sectionTwo.style.display = "none";
+    sectionThree.style.display = "none";
+};
 
-}
-dt {
-    font-weight: bold;
-    font-style: italic;
-}
-dt:hover {
-    clear: both;
-}
+function changeOfSectionTwo() {
+
+    blockTwo.style.backgroundColor = "MistyRose";
+
+    blockOne.style.backgroundColor = "#FFAEA5";
+    blockThree.style.backgroundColor = "#FFAEA5";
+
+    sectionTwo.style.display = "block";
+    sectionOne.style.display = "none";
+    sectionThree.style.display = "none";
+};
+
+function changeOfSectionThree() {
+
+    blockThree.style.backgroundColor = "MistyRose";
+
+    blockTwo.style.backgroundColor = "#FFAEA5";
+    blockOne.style.backgroundColor = "#FFAEA5";
+
+    sectionThree.style.display = "block";
+    sectionOne.style.display = "none";
+    sectionTwo.style.display = "none";
+
+};
