@@ -2,21 +2,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Baza danych: `smoki`
---
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `parada`
---
-
 CREATE TABLE IF NOT EXISTS `parada` (
   `id` int(11) NOT NULL,
   `rok` char(4) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
@@ -24,9 +9,7 @@ CREATE TABLE IF NOT EXISTS `parada` (
   `atrakcje` varchar(50) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
---
--- Zrzut danych tabeli `parada`
---
+
 
 INSERT INTO `parada` (`id`, `rok`, `liczba_widzow`, `atrakcje`) VALUES
 (1, '2025', 20025, 'piknik'),
@@ -78,11 +61,7 @@ INSERT INTO `parada` (`id`, `rok`, `liczba_widzow`, `atrakcje`) VALUES
 (47, '1934', 51120, 'piknik'),
 (48, '1939', 22152, 'widowisko plenerowe');
 
--- --------------------------------------------------------
 
---
--- Struktura tabeli dla tabeli `smok`
---
 
 CREATE TABLE IF NOT EXISTS `smok` (
   `id` int(11) NOT NULL,
@@ -92,9 +71,7 @@ CREATE TABLE IF NOT EXISTS `smok` (
   `pochodzenie` varchar(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
---
--- Zrzut danych tabeli `smok`
---
+
 
 INSERT INTO `smok` (`id`, `nazwa`, `dlugosc`, `szerokosc`, `pochodzenie`) VALUES
 (1, 'zielony metalik', 3, 2, 'Chiny'),
@@ -142,11 +119,7 @@ INSERT INTO `smok` (`id`, `nazwa`, `dlugosc`, `szerokosc`, `pochodzenie`) VALUES
 (43, 'Rogaty', 5, 3, 'Polska'),
 (44, 'Złoty ogień', 7, 1, 'Polska');
 
--- --------------------------------------------------------
 
---
--- Struktura tabeli dla tabeli `udzial`
---
 
 CREATE TABLE IF NOT EXISTS `udzial` (
   `id` int(11) NOT NULL,
@@ -154,9 +127,7 @@ CREATE TABLE IF NOT EXISTS `udzial` (
   `id_smok` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
 
---
--- Zrzut danych tabeli `udzial`
---
+
 
 INSERT INTO `udzial` (`id`, `id_parada`, `id_smok`) VALUES
 (1, 1, 1),
@@ -287,60 +258,28 @@ INSERT INTO `udzial` (`id`, `id_parada`, `id_smok`) VALUES
 (126, 29, 37),
 (127, 29, 41);
 
---
--- Indeksy dla zrzutów tabel
---
 
---
--- Indexes for table `parada`
---
 ALTER TABLE `parada`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `smok`
---
 ALTER TABLE `smok`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `udzial`
---
 ALTER TABLE `udzial`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_parada` (`id_parada`),
   ADD KEY `id_smok` (`id_smok`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT dla tabeli `parada`
---
 ALTER TABLE `parada`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
---
--- AUTO_INCREMENT dla tabeli `smok`
---
+
 ALTER TABLE `smok`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
---
--- AUTO_INCREMENT dla tabeli `udzial`
---
+
 ALTER TABLE `udzial`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=128;
---
--- Ograniczenia dla zrzutów tabel
---
 
---
--- Ograniczenia dla tabeli `udzial`
---
 ALTER TABLE `udzial`
   ADD CONSTRAINT `udzial_ibfk_1` FOREIGN KEY (`id_smok`) REFERENCES `smok` (`id`),
   ADD CONSTRAINT `udzial_ibfk_2` FOREIGN KEY (`id_parada`) REFERENCES `parada` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
